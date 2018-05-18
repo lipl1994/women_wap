@@ -1,0 +1,132 @@
+@r: 50rem;
+// input::-webkit-input-placeholder{
+//     color:rgba(85,85,86,1);
+// }
+// input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+//     color:rgba(85,85,86,1);
+// }
+// input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+//     color:rgba(85,85,86,1);
+// }
+// input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+//     color:rgba(85,85,86,1);
+// }
+.register-container {
+    width: 750/@r;
+    .register-header h2 {
+        height: 50/@r;
+        line-height: 50/@r;
+        text-align: center;
+        margin-top: 80/@r;
+        font-size: 36/@r;
+        font-family: PingFangSC-Medium;
+        color: rgba(85, 85, 86, 1);
+    }
+    .register-main {
+        width: 750/@r;
+        padding: 0 30/@r;
+        box-sizing: border-box;
+    }
+    .register-main .phone-num {
+        width: 690/@r;
+        height: 70/@r;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 10px;
+        line-height: 70/@r;
+        border: 1px solid #EAEAEA;
+        margin-top: 70/@r;
+        padding-left: 30/@r;
+        box-sizing: border-box;
+        margin-bottom: 74/@r;
+    }
+    .register-main .code,
+    .register-main .phone-code {
+        margin-bottom: 74/@r;
+    }
+    .register-main .code input,
+    .register-main .phone-code input {
+        width: 454/@r;
+        height: 70/@r;
+        background: rgba(255, 255, 255, 1);
+        border-radius: 10px;
+        line-height: 70/@r;
+        border: 1px solid #EAEAEA;
+        padding-left: 30/@r;
+        box-sizing: border-box;
+        margin-right: 26/@r;
+    }
+    .register-main .code img {
+        width: 200/@r;
+    }
+    .register-main .phone-code .sent-code {
+        width: 200/@r;
+        height: 70/@r;
+        background: rgba(216, 123, 122, 1);
+        display: inline-block;
+        vertical-align: middle;
+        color: #fff;
+        line-height: 70/@r;
+        text-align: center;
+    }
+    .next-btn {
+        width: 690/@r;
+        height: 70/@r;
+        background: rgba(232, 232, 232, 1);
+        border-radius: 35/@r;
+    }
+}
+
+//用户设置
+.register-container .back {
+    display: block;
+    width: 48/@r;
+    height: 48/@r;
+    background: url(../images/Shape@1x.png) no-repeat;
+    background-size: 50%;
+    float: left;
+    margin-top: 1.7rem;
+    margin-left: 46/@r;
+}
+
+.register-container .register-header .set-title {
+    width: 580/@r;
+    float: left;
+    text-align: center;
+}
+
+.register-container .register-header::after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.register-main p {
+    
+    input{
+        width: 690/@r;
+        height: 70/@r;
+        background: #FFFFFF;
+        border-radius: 10px;
+        line-height: 70/@r;
+        border: 1px solid #EAEAEA;
+        padding-left: 30/@r;
+        box-sizing: border-box;
+    }
+    .set-name{
+        margin-top:60/@r;
+    }
+}
+.register-main .rule{
+    margin-bottom: 40/@r;
+    line-height: 80/@r;
+    text-align: center;
+    color:#999;
+}
+.register-main .finish-btn{
+    width: 690/@r;
+    height: 70/@r;
+    background: rgba(216,123,122,1);
+    border-radius: 35/@r;
+    color:#fff;
+    margin-top:80/@r;
+}

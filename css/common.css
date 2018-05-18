@@ -1,0 +1,421 @@
+@charset "utf-8";
+html, body, menu, ul, ol, li, p, div, form, h1, h2, h3, h4, h5, h6, img, a img, input, button, textarea, fieldset{ 
+    padding: 0; 
+    margin: 0; 
+    border: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-overflow-scrolling:touch;
+}
+
+ul, ol, li { 
+    list-style: none 
+}
+
+h1, h2, h3, h4, h5, h6, b, i, em {
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal 
+}
+
+body, input, button, textarea, select {
+     -webkit-text-size-adjust: none; 
+     font: normal 14px/1.5 'Microsoft YaHei','SimHei',"SimSun",Arial,Helvetica,sans-serif; 
+     outline: 0; 
+     color: #333 
+}
+
+body { 
+    margin: 0 auto; 
+    background: #fff; /*min-width:320px; width:320px*/ 
+}
+
+input[type="text"], input[type="password"], input[type="button"], input[type="submit"], button, textarea {
+     -webkit-appearance: none 
+}
+
+a { 
+    text-decoration: none; 
+    color: #333; 
+}
+
+a {
+     blr:expression(this.onFocus=this.blur())  /*去掉a标签的虚线框，避免出现奇怪的选中区域*/
+}
+
+img, video { 
+    vertical-align: middle; 
+}
+
+.btn {
+     display: inline-block; vertical-align: middle
+}
+
+a:hover { 
+    color: #333; 
+    text-decoration: none 
+}
+
+img { 
+    border: none 
+}
+
+ol, ul, li { 
+    list-style: none; 
+}
+
+i, em {
+     font-style: normal; 
+}
+
+/*clear*/
+
+.clear { clear: both }
+
+.clearfix:after { 
+    display: block; 
+    clear: both; 
+    content: "."; 
+    visibility: hidden; 
+    height: 0; 
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.wap_comment_container {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.wap_comment_container textarea {
+    resize: none;
+}
+
+.comment_top {
+    background:rgba(245,245,245,1);
+    padding: 20px 20px 30px 20px; 
+}
+
+.comment_action {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.comment_action span {
+    font-weight: bold;
+}
+
+.comment_input {
+    width: 100%;
+    border:1px solid #EAEAEA;
+    border-radius: 4px;
+}
+
+.comment_input input {
+    height: 35px;
+    font-size: 12px;
+    line-height: 35px;
+    padding: 0 20px;
+    width: 100%;
+    border-radius: 4px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #EAEAEA;
+}
+
+.textarea_submit {
+    font-size: 0;
+    display: none;
+}
+
+.textarea_submit textarea {
+    padding: 10px 20px 0 20px;
+    height: 80px;
+    width: 100%; 
+    border-radius: 4px 4px 0 0; 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;  
+}
+
+.textarea_submit .submit {
+    height: 43px;
+    padding-left: 26px;
+    padding-right: 20px;
+    background:#fff;
+    border-top:1px solid #EAEAEA;
+    border-radius:0 0 4px 4px;
+}
+
+.submit span {
+    height: 43px;
+    line-height: 43px;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
+
+.submit img {
+    width: 1.857rem;
+    height: 1.857rem;
+    margin:0;
+    padding:0;    
+}
+
+.util_btn {
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    padding-left: 16px;
+    padding-right: 16px;    
+    border-radius: 14px;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.submit_btn {
+    
+    color: #C36364;
+    border: 1px solid #D87B7A;
+}
+
+.cancle_btn {
+    color: #555555;
+    border: 1px solid #555555;
+    margin-right: 17px;
+}
+
+.comment_list {
+    background: #fff;
+    padding:0 16px 30px 16px;
+    
+}
+
+.have_no_comment {
+    background: url('../images/btn_sf.png') center center no-repeat;
+    background-size: 108px 35px;
+    width: 100%;
+    height: 35px;
+    margin-top: 15px;
+}
+
+.comment_list .list_title { 
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.parent_floor {
+    margin-top: 30px;
+}
+
+.user_info {
+    font-size: 0;
+}
+
+.user_info img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.user_info div {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.user_info div p {
+    font-size: 15px;
+    color: rgba(34,34,34,1);
+    margin-bottom: 15px;
+}
+
+.user_info div span {
+    font-size: 12px;
+    color: rgba(189,189,189,1);
+}
+
+.likes, .reply {
+    display: inline-block;
+}
+
+.comment_likes {
+    margin-top: 20px;
+}
+
+.comment_likes .likes span{
+    vertical-align: middle;
+    font-size: 14px;
+    color: #877F83
+}
+
+.comment_likes .likes img, .reply img  {
+    width: 1.714rem;
+    height: 1.714rem;
+}
+
+.reply {
+    width: 40px;
+    text-align: center;
+}
+
+.red {
+    color: #EC1515!important;
+}
+
+.comment_content {
+    font-size: 17px;
+    color:rgba(34,34,34,1);
+    padding-left:2.5rem;
+    margin-left: 14px;
+}
+
+.comment_content p {
+    border-bottom:1px solid #F0F0F0;
+    padding-bottom: 20px;
+    margin-top:11px;
+    word-wrap: break-word;
+}
+
+.back_mask {
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    top:0;
+    left: 0;
+    display:none;
+}
+
+.login_block {
+    padding:30px 15px 25px 15px;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    z-index: 11;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+.login_container p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.login_container input {
+    width: 100%;
+    padding: 0 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #EAEAEA;
+    margin-bottom: 20px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+}
+
+.login_container input.input_red {
+    border-color: #C36364;
+}
+
+.login_container span.red-notice {
+    font-size: 12px;
+    color:rgba(85,85,86,1);
+    margin: -10px 0 10px 15px;
+    display: block;
+
+}
+
+.login_btn {
+    background:#E8E8E8;
+    border: none;
+    border-radius: 18px;
+    color: #999999;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.login_btn.active {
+    color: #fff;
+    background:#D87B7A;
+}
+
+.login_action {
+    font-size: 12px;
+    color:rgba(34,34,34,1);
+    padding:0 15px;
+
+}
+
+.login_action .cloor_pink {
+    color:#D87B7A;
+}
+
+.reply_block {
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 11;
+    width: 100%;
+    display: none;
+    height: 207px;
+    overflow-y: scroll; 
+}
+
+.reply_block .textarea_submit {
+    display: block;
+}
+
+.reply_text {
+    color: #888888;
+}
+
+.admin_reply {
+    color: #D87B7A;
+}
+
+.dialog_floor {
+    margin-top: 30px;
+}
+
+.dialog_floor .user_info {
+    margin-left: 2.5rem;
+}
+
+.comment-util {
+    display: none;
+}
+
+/************* 表情插件定制 **************/
+
+body #sina-emotion {
+    width: 280px;
+}
+
+body #sina-emotion .faces {
+    width: 279px;
+}
+
+

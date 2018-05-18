@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scaleable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <script  type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script  type="text/javascript" src="./js/axios.js"></script>
+    <script src="./js/common.js"></script>
+    <title>注册</title>
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-header">
+            <h2>用户注册</h2>
+        </div>
+        <div class="register-main">
+            <input id="phoneNum" class="phone-num" type="text" placeholder="请输入手机号">
+            <div class="code">
+                <input type="text" placeholder="请输入图形验证码"><img src="http://10.3.37.114:81/passport/captcha/1?type=api" alt="">
+            </div>
+            <div class="phone-code">
+                <input id="phoneCode" type="text" placeholder="请输入手机验证码"><span class="sent-code">发送验证码</span>
+            </div>
+            <button class="next-btn">下一步</button>
+        </div>
+    </div>
+    <script src="./js/register.js"></script>
+</body>
+</html>
