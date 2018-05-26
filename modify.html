@@ -8,13 +8,16 @@
     <title>修改资料</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/common.js"></script>
 </head>
 
 <body>
     <header class="my-header">
         <div class="logo back">
-            <img src="./images/Shape.png" alt="">
+            <span id="goBack">
+                <img src="./images/Shape.png" alt="">
+            </span>
         </div>
         <div class="my-title">
             <h2>修改资料</h2>
@@ -26,19 +29,62 @@
 
     <section class="modify-main">
         <div class="modify">
-            <span>头像</span><span class="rl"></span>
+            <span>头像</span>
+            <span class="rl"></span>
         </div>
         <div class="modify">
-            <span>用户名</span><input type="text" value="TOP" class="modify-val">
+            <span>用户名</span>
+            <input id="names" type="text" value="TOP" class="modify-val">
         </div>
         <div class="modify">
-            <span>邮箱</span><input type="text" value="320264628@qq.com" class="modify-val">
+            <span>邮箱</span>
+            <input id="email" type="text" value="320264628@qq.com" class="modify-val">
         </div>
         <div class="modify">
-            <span>电话</span><span class="modify-phone">16888666868</span><span class="rl"></span>
+            <span>电话</span>
+            <span class="modify-phone">16888666868</span>
+            <span class="rl"></span>
         </div>
-        <div class="modify"> <span>修改密码</span><span class="rl"></span></div>
+        <div class="modify">
+            <a href="./modifyPwd.html">
+                <span>修改密码</span>
+            </a>
+            <span class="rl"></span>
+        </div>
     </section>
 </body>
+<script>
+    var loginDomain='http://fulian.womenvoice.cn';
+    var name=document.querySelector('#name');
+    var email=document.querySelector('#email');
+    var user_id=getCookie('userId');
+    names.value=getCookie('userName');
+    email.value=getCookie('userEmail');
+    // 修改基本信息
+    names.focus();
+    goBack.addEventListener('click', basicData);
+
+    function basicData() {
+        console.log(names.value,user_id,email.value);
+        $.ajax({
+            url: loginDomain + "/api/v2/update/user",
+            type: 'POST',
+            xhrFields: {
+                withCredentials: true
+            },
+            
+            data:{
+                name:names.value,
+                user_id:user_id,
+                email:email.value
+            }
+        }).then(function (res) {
+            alert('修改成功');
+            window.location.href='./personalCenter.html';
+        }).catch(function (err) {
+            console.log(err);
+        })
+    }
+</script>
 
 </html>

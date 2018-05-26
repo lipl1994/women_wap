@@ -29,7 +29,7 @@ function dateFtt(fmt, date) { //author: meizz
 function crtTimeFtt(value){
     //console.log(value);
     var crtTime = new Date(value);
-    return top.dateFtt("yyyy-MM-dd",crtTime);//直接调用公共JS里面的时间类处理的办法     
+    return top.dateFtt("yyyy-MM-dd hh:mm:ss",crtTime);//直接调用公共JS里面的时间类处理的办法     
 };
 
 //将周日转成周7
@@ -40,6 +40,15 @@ function sunToSeven(day){
         return day
     };
 };
+
+/*时间戳转换事件yy-mm-dd*/
+function fmtDate(data) {
+    var date = new Date(data);
+    var y = 1900 + date.getYear();
+    var m = "0" + (date.getMonth() + 1);
+    var d = "0" + date.getDate();
+    return y + "-" + m.substring(m.length - 2, m.length) + "-" + d.substring(d.length - 2, d.length);
+}
 
 
 
@@ -89,6 +98,20 @@ function cleanCookie() {
     }
     return "." + host;
   };
+//是否登陆
+  function cheakLogin() {
+
+    // 获取cookie中的用户信息
+    var userId = getCookie('userId')
+    if(!!userId) {
+        return true
+    }
+    else {
+        return false
+    }
+    
+}
+
 
   //查询参数查找
 function getQueryVariable(variable) {

@@ -5,10 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta name="catalogs" content="414269"> -->
+    <meta name="contentid" content="75">
+    <meta name="title" content="个人中心222">
     <title>活动详情页</title>
+    <link rel="stylesheet" href="./css/jquery-sina-emotion.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/axios.js"></script>
+    <script  type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/common.js"></script>
+    <script charset="UTF-8" type="text/javascript" src="./js/jquery-sina-emotion.js"></script>
+    <script charset="UTF-8" src="./js/comment.js"></script>
 </head>
 
 <body>
@@ -21,18 +29,18 @@
     <div class="detail-main">
         <section class="abstract">
             <div class="abs-left">
-                <img src="./images/detail-poster.png" alt="">
+                <!-- <img src="./images/detail-poster.png" alt=""> -->
             </div>
             <div class="abs-right">
-                <h2>解码i³计划验解码i³计划科技主题体</h2>
+                <!-- <h2>解码i³计划验解码i³计划科技主题体</h2>
                 <p>已报名：
                     <span>13</span>
                     <em>/20(人)</em>
-                </p>
+                </p> -->
             </div>
         </section>
         <section class="when">
-            <p>
+            <!-- <p>
                 <time>2018.04.02-04.05</time>
             </p>
             <p>主办单位：
@@ -41,20 +49,121 @@
             <p>
                 <strong>北京 · </strong>
                 <span>北京经济技术开发区宏达中路16号宏达三鼎科技园</span>
-            </p>
+            </p> -->
         </section>
         <section class="Introduction">
             <h2>活动介绍</h2>
             <div class="article">
-                <img src="./images/detail-article.png" alt="">
+                <!-- <img src="./images/detail-article.png" alt="">
                 <p>
                     通过调研发现，当前我国家庭教育面临许多突出问题：部分家长对孩子生而不养、养而不教、教而无方，据相关部门统计，截至2017年8月全国无人监护的农村留守儿童有部分家长对孩子生而不养、养而不教、教而无方，50%的家长不知道用什么方法教育孩子。多数父母存在不同程度的养育焦虑，过于关注学习，缺乏对孩子思想品德、行为习惯的养成和劳动、运动等能力的培养。据相关部门统计，截至2017年8月全国无人监护的农村留守儿童教而无方，50%的家长不知道用什么方法教育孩子。多数父母存在不同程度的养育焦虑，过于关注学习，缺乏对孩子思想品德、行为习惯的养成和劳动、运动等能力的培养。据相关部门统计，截至2017年8月全国无人监护的农村留守
-                </p>
+                </p> -->
                 
             </div>
             <div class="more"><p>展开更多</p></div>
         </section>
+        <section class="sign">
+            <h2>我要报名</h2>
+            <p><span>|</span><input id="name" type="text" placeholder="请输入申请人姓名"></p>
+            <p class="errName alertMess">请输入您的姓名</p>
+            <p><span>|</span><input id="phoneNum" type="text" placeholder="请输入电话号码"></p>
+            <p class="errPhone alertMess">请输入正确的手机号</p>
+            <p><span>|</span><input id="Email" type="text" placeholder="请输入电子邮箱"></p>
+            <p class="errEmail alertMess">请输入正确的电子邮箱</p>
+            <p><textarea name="" id="Remark" placeholder="写备注..."></textarea></p>
+            <button class="submit">提交</button>
+        </section>
     </div>
+    <div class="back_mask"></div>
+        <div class="wap_comment_container">
+            <div class="comment_top">
+                <div class="comment_action clearfix">
+                    <span class="fl">我要评论</span>
+                    <a href="javascript:void(0)" class="comment_login fr">登录</a>
+                </div>
+                <div class="comment_input">
+                    <input placeholder="写评论..." id="add_comment_action" type="text">
+                    <div class="textarea_submit">
+                        <form class="comment" >
+                            <textarea name="" id="add_new_comment" cols="30" rows="10" placeholder="写评论..."></textarea>
+                            <div class="submit clearfix">
+                                <span class="fl face" >
+                                    <img  src="./images/btn_smailface.png" alt="">
+                                </span>
+                                <span class="fr">
+                                    <div class="submit_btn util_btn">发布</div>
+                                </span>
+                                
+                            </div>
+                        </form>>  
+                    </div>
+                    
+                </div>
+                <div class="have_no_comment"></div>
+            </div>
+            
+            <div class="comment_list">
+                
+                <div class="hot_comments comment-util">
+                    <div class="list_title">
+                        最热评论
+                    </div>
+                    <div class="hotList comment_item">
+                    </div>
+                </div>
+                <div class="new_comments comment-util">
+                        <div class="list_title">
+                            最新评论
+                        </div>
+                        <div class="newList comment_item">
+                        </div>
+                </div>
+            </div>
+            <div class="login_block">
+                <div class="login_container">
+                    <p>登录</p>
+                    <input type="text" id="login_user_name" autocomplete="off" oninput="checkInput()" placeholder="请输入用户名">
+                    <input type="password" id="login_password" autocomplete="new-password" oninput="checkInput()" placeholder="请输入密码">
+                    <span class="red-notice"></span>
+                    <div class="login_btn">
+                        登录
+                    </div>
+                    <div class="login_action clearfix">
+                        <a href="./find-password.html" class="fl cloor_pink">忘记密码</a>
+                        <span class="fr">
+                            还没有用户名？<a href="./register.html" class="cloor_pink">去注册</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="reply_block">
+                <div class="comment_top">
+                    <div class="comment_action clearfix">
+                        <span class="fl">我要评论</span>
+                        <a href="" class="comment_login fr">登录</a>
+                    </div>
+                    <div class="comment_input">
+                        <div class="textarea_submit">
+                            <form class="comment" >
+                                <textarea name="" id="" cols="30" rows="10" placeholder="写评论..."></textarea>
+                                <div class="submit clearfix">
+                                    <span class="fl face">
+                                        <img  src="./images/btn_smailface.png" alt="">
+                                    </span>
+                                    <span class="fr">
+                                        <div class="cancle_btn util_btn">取消</div>
+                                        <div class="submit_btn util_btn replyComment">发布</div>
+                                    </span>
+                                    
+                                </div> 
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="./js/activityDtails.js"></script>
 </body>
 
 </html>

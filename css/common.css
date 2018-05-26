@@ -308,7 +308,7 @@ i, em {
     box-sizing: border-box;
     background: #fff;
     position: fixed;
-    z-index: 11;
+    z-index: 111;
     bottom: 0;
     left: 0;
     display: none;

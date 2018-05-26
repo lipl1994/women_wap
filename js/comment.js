@@ -1,7 +1,7 @@
 // 频道id 文章id 文章标题
 var categoryId = 0, articleId = 0,title='',isReplyShow=false;
 //评论模块数据接口地址
-var domain = 'http://api.womenvoice.cn';//http://api.womenvoice.cn';
+var domain = 'http://m.womenvoice.cn:8080';//http://api.womenvoice.cn';
 //登录注册模块数据接口地址
 var loginDomain = 'http://fulian.womenvoice.cn';//'http://fulian.womenvoice.cn/'
 
@@ -13,16 +13,17 @@ $(document).ready(function () {
     // 检查是否登陆过了
     isLogin = cheakLogin()
     if(isLogin) {
-        var userName = getCookie('userName')
-        !!userName?userName:'未知用户'
-        $('.comment_login').text(userName)
-        $('.comment_login').removeClass('comment_login')
+        var userName = getCookie('userName');
+        !!userName?userName:'未知用户';
+        $('.comment_login').text(userName);
+        $('.comment_login').removeClass('comment_login');
     }
 
     //获取<meta>标签中的文章id,类目id,title信息
-    categoryId = document.querySelector('meta[name="catalogs"]').getAttribute('content');
-    articleId = document.querySelector('meta[name="contentid"]').getAttribute('content');
-    title = document.querySelector('meta[name="title"]').getAttribute('content');
+    //categoryId = document.querySelector('meta[name="catalogs"]').getAttribute('content');
+    articleId = getQueryVariable('id');
+    //title = document.querySelector('meta[name="title"]').getAttribute('content');
+    
 
     //获取评论列表
     getNewComments()
@@ -54,6 +55,9 @@ $(document).ready(function () {
     }))
 
     $('.wap_comment_container').on('click', '.submit_btn',(function (event) {
+        articleId = document.querySelector('meta[name="contentid"]').getAttribute('content');
+        title = document.querySelector('meta[name="title"]').getAttribute('content');
+        console.log(articleId,title);
         var content = $(this).parents('form').children('textarea').val().trim()
         var parentId = '', replyCommentId = '',replyTo = ''
         if ($(this).hasClass('replyComment')) {
@@ -67,7 +71,7 @@ $(document).ready(function () {
         if (!!content) {
             var data = {
                 content: content,
-                categoryId: categoryId,
+                //categoryId: categoryId,
                 articleId: articleId,
                 title:title,
                 replyUserOpenId: userInfo.userId,
@@ -81,7 +85,7 @@ $(document).ready(function () {
                 commmentType:'user'
             }
             $.ajax({
-                url: domain + "/webapi/comment/addComment",
+                url: domain + "/webapi/activity/addComment",
                 data: JSON.stringify(data),
                 type: 'POST',
                 contentType: 'application/json',
@@ -128,6 +132,7 @@ $(document).ready(function () {
                 $('.red-notice').hide()
                 $('.back_mask').hide()
                 $('.login_block').hide()
+                location.reload();
             })
             .fail(function(data){
                 console.log(data)
@@ -173,7 +178,7 @@ $(document).ready(function () {
 
             axios({
                 method: 'post',
-                url: domain + "/webapi/comment/likes",
+                url: domain + "/webapi/activity/likes",
                 data: bodyFormData,
                 config: { headers: {'Content-Type': 'multipart/form-data' }}
               })
@@ -230,6 +235,7 @@ $(document).ready(function () {
             replyCommentId: ''
         }
     })
+  
 
 })
 
@@ -318,11 +324,11 @@ function getCookie(c_name) {
 
 function getNewComments() {
     var data = {
-        categoryId: categoryId,
+        //categoryId: categoryId,
         articleId: articleId
     }
 
-    axios.get(domain + "/webapi/comment/list", {
+    axios.get(domain + "/webapi/activity/commentList", {
         params: data,
         dataType: "json", 
         crossDomain: true,
@@ -338,11 +344,11 @@ function getNewComments() {
 
 function getHotComments() {
     var data = {
-        categoryId: categoryId,
+        //categoryId: categoryId,
         articleId: articleId
     }
 
-    axios.get(domain + "/webapi/comment/hots", {
+    axios.get(domain + "/webapi/activity/hots", {
         params: data,
         dataType: "json", 
         crossDomain: true,

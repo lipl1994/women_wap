@@ -16,7 +16,7 @@ setName.oninput = function() {
     setName.style.border = "1px solid #e60012";
   } else {
     setName.style.border = "";
-     pws_onOf=true;
+     pwd_onOf=true;
   }
 };
 
