@@ -230,9 +230,10 @@ img {
     .photo{
         width: 75/@r;
         height: 75/@r;
-        background: url(../images/photo.png) no-repeat;
+        //background: url(../images/photo.png) no-repeat;
         background-size: cover;
         margin: 30/@r auto 0 auto;
+        border-radius: 50%;
         
     }
     .nickname{
@@ -282,6 +283,39 @@ img {
             margin:0 auto;
             display: block;
         }
+    }
+}
+.btns{
+    width: 375/@r;
+    margin-top:116/@r;
+    .up-btn{
+        position: relative;
+    }
+    .up-photo{
+        width: 290/@r;
+        height: 48/@r;
+        margin:0 auto 48/@r auto;
+        background: #ff6666;
+        display: block;
+        color:#fff;
+        font-size: 14/@r;
+        font-weight: bold; 
+    }
+    .back-btn{
+        width: 290/@r;
+        height: 48/@r;
+        margin:0 auto;
+        background: #0099ff;
+        display: block;
+        color:#fff;
+        font-size: 14/@r;
+        font-weight: bold;
+    }
+    .photo-file{
+        position: absolute;
+        left: 100/@r;
+        top:15/@r;
+        opacity: 0;
     }
 }
 //我的

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改头像</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/axios.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/comment.js"></script>
+</head>
+
+<body>
+    <header class="person-header">
+        <div class="logo back">
+            <img src="./images/detail-logo.png" alt="">
+        </div>
+
+        <div class="menu-btn">
+            <span class="menu-button"></span>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="photo"></div>
+        <p class="nickname">Type something</p>
+    </section>
+    <section class="btns">
+        <label for="">
+                <div class="up-btn">
+           
+                        <form id="uploads" enctype="multipart/form-data" method="post">
+                            <button id="btn" class="up-photo">上传头像</button>
+                            <input id="files" class="photo-file" type="file" name="avatar">
+                        </form>
+                        
+                    </div>
+        </label>
+        
+        <p><button class="back-btn">返回</button></p>
+    </section>
+    <script>
+        var photo=document.querySelector('.photo');
+        photo.style.background='url('+'http://fulian.womenvoice.cn/api/v2/users/'+getCookie('userId')+'/avatar?time='+Date.now()+')';
+        photo.style.backgroundSize='cover';
+        var backBtn=document.querySelector('.back-btn');
+        var myFile = document.getElementById("files");
+        var loginDomain='http://fulian.womenvoice.cn';
+        myFile.onchange = function() {
+            var form = document.getElementById("uploads"),
+                formData = new FormData(form);
+                formData.append('name', getCookie('userName'));
+                formData.append('user_id', getCookie('userId'));
+                formData.append('email', getCookie('userEmail'));
+            $.ajax({
+              url: loginDomain + "/api/v2/update/user",
+              type: "POST",
+              data: formData,
+              processData: false,
+              contentType: false,
+            }).then(function(response){
+                alert('修改成功');
+                photo.style.background='url('+'http://fulian.womenvoice.cn/api/v2/users/'+getCookie('userId')+'/avatar?time='+Date.now()+')';
+                photo.style.backgroundSize='cover';
+
+            });
+          };
+          backBtn.addEventListener('click',function(){
+              window.location.href='./modify.html'; 
+          })
+    </script>
+</body>
+
+
+</html>

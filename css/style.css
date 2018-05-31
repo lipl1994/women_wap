@@ -288,9 +288,9 @@ img {
 .banner .photo {
   width: 3rem;
   height: 3rem;
-  background: url(../images/photo.png) no-repeat;
   background-size: cover;
   margin: 1.2rem auto 0 auto;
+  border-radius: 50%;
 }
 .banner .nickname {
   font-size: 0.64rem;
@@ -339,6 +339,39 @@ img {
   background: #fff;
   margin: 0 auto;
   display: block;
+}
+.btns {
+  width: 15rem;
+  margin-top: 4.64rem;
+}
+.btns .up-btn {
+  position: relative;
+}
+.btns .up-photo {
+  width: 11.6rem;
+  height: 1.92rem;
+  margin: 0 auto 1.92rem auto;
+  background: #ff6666;
+  display: block;
+  color: #fff;
+  font-size: 0.56rem;
+  font-weight: bold;
+}
+.btns .back-btn {
+  width: 11.6rem;
+  height: 1.92rem;
+  margin: 0 auto;
+  background: #0099ff;
+  display: block;
+  color: #fff;
+  font-size: 0.56rem;
+  font-weight: bold;
+}
+.btns .photo-file {
+  position: absolute;
+  left: 4rem;
+  top: 0.6rem;
+  opacity: 0;
 }
 .my-header {
   width: 15rem;

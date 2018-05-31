@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>项目详情页</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/axios.js"></script>
+    <script src="./js/common.js"></script>
+    <script charset="UTF-8" src="./js/comment.js"></script>
+</head>
+
+<body>
+    <header class="detail-header">
+        <img src="./images/detail-logo.png" alt="">
+        <span></span>
+        <strong>追梦女性</strong>
+    </header>
+
+    <div class="detail-main">
+        <section class="abstract">
+            <div class="abs-left">
+                <!-- <img src="./images/detail-poster.png" alt=""> -->
+            </div>
+            <div class="abs-right">
+                <!-- <h2>解码i³计划验解码i³计划科技主题体</h2>
+                <time>2018-03-07</time> -->
+            </div>
+        </section>
+        
+        <section class="Introduction">
+            <h2>项目介绍</h2>
+            <div class="article">
+                <!-- <img src="./images/detail-article.png" alt="">
+                <p>
+                    通过调研发现，当前我国家庭教育面临许多突出问题：部分家长对孩子生而不养、养而不教、教而无方，据相关部门统计，截至2017年8月全国无人监护的农村留守儿童有部分家长对孩子生而不养、养而不教、教而无方，50%的家长不知道用什么方法教育孩子。多数父母存在不同程度的养育焦虑，过于关注学习，缺乏对孩子思想品德、行为习惯的养成和劳动、运动等能力的培养。据相关部门统计，截至2017年8月全国无人监护的农村留守儿童教而无方，50%的家长不知道用什么方法教育孩子。多数父母存在不同程度的养育焦虑，过于关注学习，缺乏对孩子思想品德、行为习惯的养成和劳动、运动等能力的培养。据相关部门统计，截至2017年8月全国无人监护的农村留守
+                </p> -->
+                
+            </div>
+            <div class="more"><p>展开更多</p></div>
+        </section>
+        <section class="sign">
+            <h2>我要申请</h2>
+            <div class="sign-form">
+                <p><span>|</span><input id="name" type="text" placeholder="请输入申请人姓名"></p>
+                <p class="errName alertMess">请输入您的姓名</p>
+                <p><span>|</span><input id="phoneNum" type="text" placeholder="请输入电话号码"></p>
+                <p class="errPhone alertMess">请输入正确的手机号</p>
+                <p><span>|</span><input id="Email" type="text" placeholder="请输入电子邮箱"></p>
+            </div>
+            
+            <p class="errEmail alertMess">请输入正确的电子邮箱</p>
+            <div class="area">
+                <div class="area-title">
+                    <span class="icon-area">|</span>
+                    <span class="select-btn">请选择所属区域</span>
+                    <span class="icon-down"></span>
+                </div>
+                <div class="area-list">
+                    <ul>
+                            <li>安徽</li>
+                            <li>澳门</li>
+                            <li>北京</li>
+                            <li>重庆</li>
+                            <li>福建</li>
+                            <li>甘肃</li>
+                            <li>广东</li>
+                            <li>广西</li>
+                            <li>贵州</li>
+                            <li>海南</li>
+                            <li>河北</li>
+                            <li>河南</li>
+                            <li>黑龙江</li>
+                            <li>湖北</li>
+                            <li>湖南</li>
+                            <li>吉林</li>
+                            <li>江苏</li>
+                            <li>江西</li>
+                            <li>辽宁</li>
+                            <li>内蒙古</li>
+                            <li>宁夏</li>
+                            <li>青海</li> 
+                            <li>山东</li>
+                            <li>山西</li>
+                            <li>陕西</li>
+                            <li>上海</li>
+                            <li>四川</li>
+                            <li>台湾</li>
+                            <li>天津</li>
+                            <li>西藏</li>
+                            <li>香港</li>
+                            <li>新疆</li>
+                            <li>云南</li>
+                            <li>浙江 </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="down-up">
+                <div class="down"><p><a id="down" href="" style="color: #ee7254;">点击下载</a>项目申请资料</p></div>
+                <div class="up">
+                    <form id="uploads" enctype="multipart/form-data" method="post">
+                            <p><a href="" style="color: #0277ff">点击上传</a>项目申请资料</p>
+                            <input id="files" type="file" name="file">
+                    </form>                 
+                </div>
+            </div>
+            <button class="submit">提交</button>
+        </section>
+        <div class="back_mask"></div>
+        <div class="login_block">
+            <div class="login_container">
+                <p>登录</p>
+                <input type="text" id="login_user_name" autocomplete="off" oninput="checkInput()" placeholder="请输入用户名">
+                <input type="password" id="login_password" autocomplete="new-password" oninput="checkInput()" placeholder="请输入密码">
+                <span class="red-notice"></span>
+                <div class="login_btn">
+                    登录
+                </div>
+                <div class="login_action clearfix">
+                    <a href="./find-password.html" class="fl cloor_pink">忘记密码</a>
+                    <span class="fr">
+                        还没有用户名？<a href="./register.html" class="cloor_pink">去注册</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/projectDetails.js"></script>
+</body>
+
+</html>

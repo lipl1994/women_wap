@@ -44,7 +44,7 @@
         //console.log(oldPassWord.value,newPassWord.value)
         console.log(newPassWord.value.length);
         if(newPassWord.value.length<=15&&newPassWord.value.length>=6){
-            console.log(123);
+            //console.log(123);
             $.ajax({
                 url:loginDomain + "/api/v2/update/password",
                 type:'POST',

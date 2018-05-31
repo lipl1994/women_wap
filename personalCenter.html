@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/axios.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/comment.js"></script>
+</head>
+
+<body>
+    <header class="person-header">
+        <div class="logo back">
+            <img src="./images/detail-logo.png" alt="">
+        </div>
+
+        <div class="menu-btn">
+            <span class="menu-button"></span>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="photo"></div>
+        <p class="nickname">Type something</p>
+    </section>
+    <section class="person_main">
+        <p>
+            <a href="./myActivity.html">我的活动</a>
+            <span></span>
+        </p>
+        <p>
+            <a href="./myProject.html">我的项目</a>
+            <span></span>
+        </p>
+        <!-- <p>
+            <a href="">我的维权</a> <span></span>
+        </p> -->
+        <p>
+            <a href="./myComment.html">我的评论</a>
+            <span></span>
+        </p>
+        <p>
+            <a href="./modify.html">修改资料</a>
+            <span></span>
+        </p>
+        <div class="sign-out">
+            <button id="signOut">退出登录</button>
+        </div>
+    </section>
+    <!-- 登陆 -->
+    <div class="back_mask"></div>
+    <div class="login_block">
+        <div class="login_container">
+            <p>登录</p>
+            <input type="text" id="login_user_name" autocomplete="off" oninput="checkInput()" placeholder="请输入用户名">
+            <input type="password" id="login_password" autocomplete="new-password" oninput="checkInput()" placeholder="请输入密码">
+            <span class="red-notice"></span>
+            <div class="login_btn">
+                登录
+            </div>
+            <div class="login_action clearfix">
+                <a href="./find-password.html" class="fl cloor_pink">忘记密码</a>
+                <span class="fr">
+                    还没有用户名？
+                    <a href="./register.html" class="cloor_pink">去注册</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- 导航菜单 -->
+    <menu class="women-menu">
+        <div class="menu-item">
+            <div class="father-nav">
+                <a href="">首页</a>
+            </div>
+            <div class="child-nav">
+                <ul>
+                    <li>
+                        <a href="./personalCenter.html">个人中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="father-nav">
+                <a href="">新闻资讯</a>
+            </div>
+            <div class="child-nav">
+                <ul>
+                    <li>
+                        <a href="">资讯</a>
+                    </li>
+                    <li>
+                        <a href="">女声</a>
+                    </li>
+                    <li>
+                        <a href="">视频</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="father-nav">
+                <a href="">追梦女性</a>
+            </div>
+            <div class="child-nav">
+                <ul>
+                    <li>
+                        <a href="">活动</a>
+                    </li>
+                    <li>
+                        <a href="">职场</a>
+                    </li>
+                    <li>
+                        <a href="">创业</a>
+                    </li>
+                    <li>
+                        <a href="">公益</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="father-nav">
+                <a href="">新闻资讯</a>
+            </div>
+            <div class="child-nav">
+                <ul>
+                    <li>
+                        <a href="">资讯</a>
+                    </li>
+                    <li>
+                        <a href="">女声</a>
+                    </li>
+                    <li>
+                        <a href="">视频</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="father-nav sibling">
+                <a href="">出彩人生</a>
+            </div>
+            <div class="child-nav sibling">
+                <ul>
+                    <li>
+                        <a href="">榜样人物</a>
+                    </li>
+                    <li>
+                        <a href="">三八红旗手</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="father-nav sibling">
+                <a href="">维权服务</a>
+            </div>
+            <div class="child-nav sibling">
+                <ul>
+                    <li>
+                        <a href="">12338热线</a>
+                    </li>
+                    <li style="margin-left: 0;">
+                        <a href="">三八红旗手</a>
+                    </li>
+                    <li>
+                        <a href="">以事说法</a>
+                    </li>
+                    <li>
+                        <a href="">姐妹学法</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="father-nav sibling">
+                <a href="">家风苑</a>
+            </div>
+            <div class="child-nav sibling">
+                <ul>
+                    <li>
+                        <a href="">家风家训</a>
+                    </li>
+                    <li>
+                        <a href="">好爸好妈</a>
+                    </li>
+                    <li>
+                        <a href="">我爱我家</a>
+                    </li>
+                    <li>
+                        <a href="">城里城外</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="father-nav sibling">
+                <a href="">尚生活</a>
+            </div>
+            <div class="child-nav sibling">
+                <ul>
+                    <li>
+                        <a href="">我爱阅读</a>
+                    </li>
+                    <li>
+                        <a href="">健康养生</a>
+                    </li>
+                    <li>
+                        <a href="">榜样人物</a>
+                    </li>
+                    <li>
+                        <a href="">心理氧吧</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </menu>
+</body>
+<script>
+    window.onload = function () {
+        if (!isLogin) {
+            alert('请先登陆');
+            iWantSign();
+            $('.back_mask').unbind('click');
+            var backMask = document.querySelector('.back_mask');
+            backMask.onclick = function () {
+                window.history.go(-1);
+            }
+        } else {
+            var photo = document.querySelector('.photo');
+            var nickname = document.querySelector('.nickname');
+            var signOut = document.querySelector('#signOut');
+            nickname.innerHTML = getCookie('userName');
+            photo.style.background =
+                `url(${!!getCookie('userIcon')&&getCookie('userIcon')!='null'?getCookie('userIcon'):'./images/photo.png'}) no-repeat`;
+            photo.style.backgroundSize = 'cover';
+            signOut.onclick = function () {
+                //debugger;
+                console.log(!!getCookie('userId'));
+                cleanCookie();
+                console.log(!!getCookie('userId'));
+                if (!!!getCookie('userId')) {
+                    console.log(111);
+                    window.location.href = './activityList.html';
+                }
+            }
+
+
+
+        }
+
+        function iWantSign() {
+            isLogin = cheakLogin()
+            if (!isLogin) {
+                $('.back_mask').show();
+                $('.login_block').show();
+            } else {
+                return false;
+            }
+
+
+        };
+        ;(function () {
+            var menuBtn = document.querySelector('.menu-btn');
+            var menuButton = document.querySelector('.menu-button');
+            var womenMenu = document.querySelector('.women-menu');
+            var onOf = true
+            menuBtn.onclick = function () {
+                if (onOf) {
+                    womenMenu.style.display = 'block';
+                    //console.log(menuButton);
+                    menuBtn.style.background = 'rgba(235,89,96,0.1)';
+                    onOf = !onOf;
+                } else {
+                    womenMenu.style.display = '';
+                    menuBtn.style.background = '';
+                    onOf = !onOf;
+                }
+
+            };
+        })()
+
+    }
+</script>
+
+</html>
